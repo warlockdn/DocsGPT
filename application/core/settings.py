@@ -17,6 +17,10 @@ class Settings(BaseSettings):
     API_KEY: str = None  # LLM api key
     EMBEDDINGS_KEY: str = None  # api key for embeddings (if using openai, just copy API_KEY
 
+    OPENAI_API_BASE: str = ""  # azure openai api base url
+    OPENAI_API_VERSION: str = ""  # azure openai api version
+    AZURE_DEPLOYMENT_NAME: str = ""  # azure deployment name
+
 
 path = Path(__file__).parent.parent.absolute()
 settings = Settings(_env_file=path.joinpath(".env"), _env_file_encoding="utf-8")
